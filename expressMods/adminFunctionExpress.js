@@ -29,10 +29,15 @@ app.get('/:userId/numbers', (req, res, next) => {
   res.send(publicData.numbers);
 });
 
-app.get('/:userId/phone-numbers',isAdmin, (req, res, next) => {
+app.get('/:userId/phone-numbers', isAdmin, (req, res, next) => {
   res.send(secretData.coolPhoneNumbers);
 });
 
 app.get('/:userId/fav-sites', isAdmin, (req, res, next) => {
   res.send(secretData.favSites);
 });
+
+
+app.listen(4000, () => {
+  console.log('server is up!')
+})
